@@ -2,7 +2,7 @@
 
 ## Description
 
-This repository contains a simple parking rate calculator code. Parking rate calculator is used to computer rented rate. Programming language used in this webapp are python & html.
+This repository contains a simple parking rate calculator code. Parking rate calculator is used to compute cost in renting the parking slot. Programming language used in this webapp are python & html.
 
 ## Usage
 
