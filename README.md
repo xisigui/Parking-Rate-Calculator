@@ -13,6 +13,7 @@ dependencies are installed on your system:
   - Visual Studio Code
   - Flask
   - Python 3.11.2
+  - Xampp
 
 ### Folder structure
 
