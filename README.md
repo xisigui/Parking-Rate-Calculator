@@ -30,9 +30,10 @@ Parking Rate Calculator/     # Root directory.
 
 ## Quick Start Setup 
 
-For cloning github repository & installing Flask run the following command using terminal.
+For cloning github repository & installing Flask and mysql connector run the following command using terminal.
 ```sh
 pip install flask
+pip install mysql-connector-python
 git clone https://github.com/xisigui/Parking-Rate-Calculator
 ```
 
