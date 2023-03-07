@@ -25,6 +25,7 @@ Parking Rate Calculator/     # Root directory.
   |- index.html    # Homepage
   |- result.hmtl   # Result page redirect.
 |- app.py        # Used for running the whole program.
+|- data.sql      # Contains database.
 ```
 
 ## Quick Start Setup 
