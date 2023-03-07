@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 import datetime
+import mysql.connector
 
 app = Flask(__name__)
 
@@ -23,7 +24,16 @@ def calculate_employee_rate(duration):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    cnx = mysql.connector.connect(user='root', password='', host='localhost', database='data')
+
+    cursor = cnx.cursor()
+
+    cursor.execute("SELECT VehicleType, StartTime, EndTime, Cost FROM transactions")
+
+    results = cursor.fetchall()
+
+    return render_template('index.html', data = results)
+
 
 @app.route('/calculate', methods=['POST'])
 def calculate():

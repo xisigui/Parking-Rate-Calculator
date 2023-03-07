@@ -6,6 +6,40 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
+
+    <table class="table table-hover">
+    <thead>
+        <tr>
+        <th>Vehicle Type</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Cost</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in data %}
+        <tr onclick="getRowData(this)">
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+          </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+
+    <script>
+        function getRowData(row) {          
+            var vehicle_type = row.cells[0].innerText.toLowerCase();    
+            var start_time = row.cells[1].innerText;
+            var end_time = row.cells[2].innerText;        
+
+            document.getElementById("vehicle_type").value = vehicle_type;
+            document.getElementById("start_time").value = start_time;
+            document.getElementById("end_time").value = end_time;
+        }
+    </script>
+
     <div class="container mt-5">
         <h1 class="text-center mb-4">Parking Rate Calculator</h1>
         <form method="POST" action="/calculate">
