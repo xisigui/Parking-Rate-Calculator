@@ -45,6 +45,7 @@ def calculate():
     end_time = datetime.datetime.strptime(end_time_str, '%Y-%m-%dT%H:%M')
 
     duration = (end_time - start_time).total_seconds() // 60
+    hours = (end_time - start_time) / datetime.timedelta(hours=1)
 
     if vehicle_type == 'car':
         rate = calculate_car_rate(duration)
@@ -53,7 +54,7 @@ def calculate():
     elif vehicle_type == 'employee':
         rate = calculate_employee_rate(duration)
     
-    return render_template('result.html', rate=rate)
+    return render_template('result.html', rate=rate, duration = hours)
 
 if __name__ == '__main__':
     app.run(debug=True)
